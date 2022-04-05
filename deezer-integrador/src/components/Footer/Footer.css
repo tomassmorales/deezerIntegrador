@@ -1,0 +1,15 @@
+footer{
+	width: 100%;
+	background-color: slateblue;
+	margin: 0;
+	padding: 50px;
+}
+
+.team {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	list-style: none;
+}

@@ -1,19 +1,23 @@
 import React, {Component} from "react";
+import "../Tarjeta/Tarjeta.css"
 
 class Tarjeta extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-
+                        datos: this.props.info
 		}
 	}
 	render(){
 		return(
-			<article>
+			<article className= "tarjeta">
                         <main>
-                        <img src="./img/image-default.png" alt=""/>
-                        <h3>Título/ Nombre</h3>
-                        <p className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint cumque velit minus facere laboriosam voluptatem impedit ea unde labore optio eius quis, dignissimos expedita. Culpa, soluta perspiciatis! Sint, laboriosam cum.</p>
+                        <div className= "boton-eliminar">
+                                <button>X</button>
+                        </div>
+                        <img src={this.state.datos.album.cover_medium} alt="Imagen"/>
+                        <h3>{this.state.datos.title}</h3>
+                        <p className="description">Artista: {this.state.datos.artist.name} - Duracion: {this.state.datos.duration} - Ranking: {this.state.datos.rank}</p>
                         <section className="aditional-info">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse qui atque.</p>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse qui atque.</p>

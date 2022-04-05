@@ -1,4 +1,4 @@
-// import '../public/assets/css';
+// import "../public/assets/css/styles.css"
 import Formulario from "./components/Formulario/Formulario"
 import TarjetasSection from "./components/TarjetasSection/TarjetasSection"
 import Footer from "./components/Footer/Footer"
