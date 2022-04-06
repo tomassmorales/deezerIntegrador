@@ -1,4 +1,5 @@
 import React, {Component} from "react"
+import "../Formulario/Formulario.css"
 
 class Formulario extends Component {
 	constructor(props){
@@ -24,9 +25,9 @@ class Formulario extends Component {
 	render(){
 		return(
 		<form onSubmit= {(event)=> this.evitarDefault(event)}>
-			<input type="text" name="search" id="" placeholder="Search" onChange = {(dato) => this.obtenerDatos(dato)} value={this.state.value}/>
+			<input type="text" name="search" id="" placeholder="Busca tu cancion favorita..." onChange = {(dato) => this.obtenerDatos(dato)} value={this.state.value}/>
 			<button type="submit"><i className="fas fa-search"></i></button>
-		</form>                   
+		</form>     
 		);
 	}
 

@@ -14,8 +14,8 @@ function App() {
     </header>
     <main>
       <TarjetasSection/>
-      <Footer/>
     </main>
+      <Footer/>
     </div>
   );
 }
