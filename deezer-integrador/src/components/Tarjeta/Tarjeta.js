@@ -7,13 +7,15 @@ class Tarjeta extends Component {
 		this.state = {
                         datos: this.props.info
 		}
-	}
+	} 
+
+        
 	render(){
 		return(
 			<article className= "tarjeta">
                         <main>
                         <div className= "boton-eliminar">
-                                <button>X</button>
+                                <button onClick={()=> this.props.borrarArtista(this.props.info.id)}>X</button>
                         </div>
                         <img src={this.state.datos.album.cover_medium} alt="Imagen"/>
                         <h3>{this.state.datos.title}</h3>

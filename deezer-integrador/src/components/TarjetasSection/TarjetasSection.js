@@ -18,13 +18,26 @@ class TarjetasSection extends Component {
 			}
 		))
 		.catch(error => console.log(error))
-	}
+	} 
+
+	borrar(id){ 
+		let artistasFiltrados = []; 
+		artistasFiltrados = this.state.datos.filter( unArtista => unArtista.id !== id); 
+
+		this.setState({
+				datos: artistasFiltrados
+		})
+}
+
+	
 	render(){
 		return(
 			<React.Fragment>
                         <section className="card-container">
 			{this.state.datos === "" ? <h1>Cargando...</h1> : 
-			this.state.datos.map((cancion, idx) => <Tarjeta key = {cancion.title + idx} info = {cancion}/>)}
+			this.state.datos.map((cancion, idx) => <Tarjeta key = {cancion.title + idx} info = {cancion}
+			borrarArtista={ (id)=> this.borrar(id) } />
+			)}
                        </section>
 		       <button type="button" className= "cargar">Cargar más tarjetas</button>
 			</React.Fragment>
