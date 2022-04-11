@@ -29,7 +29,8 @@ class TarjetasSection extends Component {
 		artistasFiltrados = this.state.datos.filter( unArtista => unArtista.id !== id); 
 
 		this.setState({
-				datos: artistasFiltrados
+				datos: artistasFiltrados,
+				filter: artistasFiltrados
 		})
 }
 
@@ -52,12 +53,12 @@ class TarjetasSection extends Component {
 			<React.Fragment>
 			<Formulario filter = {(aBuscar) => this.filtrarBusqueda(aBuscar)}/>
                         <section className="card-container">
-			{this.state.datos === "" ? <h1>Cargando...</h1> : 
+			{/* {this.state.datos === "" ? <h1>Cargando...</h1> : 
 			this.state.datos.map((cancion, idx) => <Tarjeta key = {cancion.title + idx} info = {cancion}
 			borrarArtista={ (id)=> this.borrar(id) } />
-			)}
+			)} */}
 			{this.state.filter === "" ? <h1>Cargando...</h1> : 
-			this.state.filter.map((cancion, idx) => <Tarjeta key = {cancion.title + idx} info = {cancion}/>)}
+			this.state.filter.map((cancion, idx) => <Tarjeta key = {cancion.title + idx} info = {cancion} borrarArtista={ (id)=> this.borrar(id) }/>)}
                        </section>
 		       <button type="button" className= "cargar">Cargar más tarjetas</button>
 			</React.Fragment>
