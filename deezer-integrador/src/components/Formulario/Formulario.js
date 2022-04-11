@@ -1,4 +1,5 @@
 import React, {Component} from "react"
+import "../Formulario/Formulario.css"
 
 class Formulario extends Component {
 	constructor(props){
@@ -8,25 +9,25 @@ class Formulario extends Component {
 		}
 	}
 
-	// evitarDefault(event){
-	// 	console.log("Evitando envio del formulario");
-	// 	event.preventDefault();
-	// }
+	evitarDefault(event){
+		console.log("Evitando envio del formulario");
+		event.preventDefault();
+	}
 
-	// obtenerDatos(datos){
-	// 	this.setState({
-	// 		value: datos.target.value
-	// 	},
-	// 	()=> this.props.filtrar(this.state.value)
-	// 	)
-	// }
+	obtenerDatos(datos){
+		this.setState({
+			value: datos.target.value
+		},
+		()=> this.props.filter(this.state.value)
+		)
+	}
 
 	render(){
 		return(
-		<form>
-			<input type="text" name="search" id="" placeholder="Search"/>
+		<form onSubmit= {(event)=> this.evitarDefault(event)}>
+			<input type="text" name="search" id="" placeholder="Busca tu cancion favorita..." onChange = {(dato) => this.obtenerDatos(dato)} value={this.state.value}/>
 			<button type="submit"><i className="fas fa-search"></i></button>
-		</form>                   
+		</form>     
 		);
 	}
 
