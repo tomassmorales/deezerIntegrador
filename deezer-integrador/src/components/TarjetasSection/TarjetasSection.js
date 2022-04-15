@@ -10,6 +10,7 @@ class TarjetasSection extends Component {
 		this.state = {
 			datos : "",
 			filter: "",
+			limit: 10
 		}
 	}
 	componentDidMount(){
@@ -18,11 +19,19 @@ class TarjetasSection extends Component {
 		.then(data => this.setState(
 			{
 			datos: data.data,
-			filter: data.data
+			filter: data.data, 
+			
 			}
 		))
 		.catch(error => console.log(error))
 	} 
+
+	incrementar(){
+		
+		this.setState( //recibe un objeto literal que quiero modificar
+			{ limit: this.state.limit + 10 }
+		)
+	};
 
 	borrar(id){ 
 		let artistasFiltrados = []; 
@@ -60,7 +69,7 @@ class TarjetasSection extends Component {
 			{this.state.filter === "" ? <h1>Cargando...</h1> : 
 			this.state.filter.map((cancion, idx) => <Tarjeta key = {cancion.title + idx} info = {cancion} borrarArtista={ (id)=> this.borrar(id) }/>)}
                        </section>
-		       <button type="button" className= "cargar">Cargar más tarjetas</button>
+		       <button type="button" className= "cargar" onClick={()=>this.incrementar()}>Cargar más tarjetas</button>
 			</React.Fragment>
 		);
 	}
