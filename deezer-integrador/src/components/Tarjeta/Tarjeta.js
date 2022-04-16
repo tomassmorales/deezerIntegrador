@@ -6,7 +6,7 @@ class Tarjeta extends Component {
 		super(props);
 		this.state = {
                         datos: this.props.info,
-                        viewMore: true,
+                        viewMore: false,
                         text: "Ver más",
                         infoAdicionalTarjeta: ""
 		}
@@ -38,8 +38,11 @@ class Tarjeta extends Component {
                         <p className="description">Artista: {this.state.datos.artist.name} - Duracion: {this.state.datos.duration} - Ranking: {this.state.datos.rank}</p>
 
                         <button className='more' onClick={()=>this.viewMore()}> {this.state.text} </button>
-                                {this.state.viewMore == false ? <h1>no hay na...</h1> :
-                                <h4> {this.state.datos.artist.name} </h4> 
+                                {this.state.viewMore == false ? <h1> </h1> :
+                                <div>
+                                <h5>Album: {this.state.datos.album.title}</h5> 
+                                <p>Rank: {this.state.datos.rank} </p> 
+                                </div>
                                 }
 
                         </main>
