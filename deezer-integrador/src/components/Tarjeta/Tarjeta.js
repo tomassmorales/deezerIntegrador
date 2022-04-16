@@ -6,16 +6,16 @@ class Tarjeta extends Component {
 		super(props);
 		this.state = {
                         datos: this.props.info,
-                        viewMore: false,
+                        viewMore: true,
                         text: "Ver más",
                         infoAdicionalTarjeta: ""
 		}
 	} 
         viewMore(){
-                if(this.state.viewMore){
+                if(this.state.viewMore == true ){
                     this.setState({
                         viewMore: false,
-                        text: this.state.text
+                        text: "Ver mas"
                     })
                 } else {
                     this.setState({
@@ -36,8 +36,12 @@ class Tarjeta extends Component {
                         <img src={this.state.datos.album.cover_medium} alt="Imagen"/>
                         <h3>{this.state.datos.title}</h3>
                         <p className="description">Artista: {this.state.datos.artist.name} - Duracion: {this.state.datos.duration} - Ranking: {this.state.datos.rank}</p>
-                        <button className='aditional-info' onClick={()=>this.props.viewMore()}>{this.state.text}</button>
-                        <p> {this.state.datos.artist.name} </p>
+
+                        <button className='more' onClick={()=>this.viewMore()}> {this.state.text} </button>
+                                {this.state.viewMore == false ? <h1>no hay na...</h1> :
+                                <h4> {this.state.datos.artist.name} </h4> 
+                                }
+
                         </main>
                         </article>
 		);
