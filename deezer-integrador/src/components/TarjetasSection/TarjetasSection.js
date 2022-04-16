@@ -10,7 +10,8 @@ class TarjetasSection extends Component {
 		this.state = {
 			datos : "",
 			filter: "",
-			limit: 10
+			limit: 10,
+			
 		}
 	}
 	componentDidMount(){
@@ -52,7 +53,6 @@ class TarjetasSection extends Component {
 		})
 		console.log(filtrado);
 	}
-
 
 
 
