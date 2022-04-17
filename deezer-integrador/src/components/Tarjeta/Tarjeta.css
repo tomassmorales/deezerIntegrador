@@ -9,6 +9,17 @@
 	margin-bottom: 10px;
 	border-radius: 2%;
 }
+.tarjeta-invertida {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	width: 24%;
+	padding: 10px;
+	background-color: black;
+	margin-bottom: 10px;
+	border-radius: 2%;
+}
 
 .tarjeta img {
 	height: 250px;
