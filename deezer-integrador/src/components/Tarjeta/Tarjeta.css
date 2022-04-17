@@ -7,6 +7,7 @@
 	padding: 10px;
 	background-color: black;
 	margin-bottom: 10px;
+	border-radius: 2%;
 }
 
 .tarjeta img {
@@ -18,10 +19,12 @@
 	flex-direction: row;
 	justify-content: flex-end;
 	width: 100%;
+	
 }
 
 .boton-eliminar button {
 	background-color: red;
 	width: 10%;
 	height: 25px;
+	
 }

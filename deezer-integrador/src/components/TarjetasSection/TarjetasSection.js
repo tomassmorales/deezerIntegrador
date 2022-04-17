@@ -11,6 +11,8 @@ class TarjetasSection extends Component {
 			datos : "",
 			filter: "",
 			limit: 10,
+			orientacion: false,
+			mensaje: 'invertir orientacion'
 			
 		}
 	}
@@ -54,6 +56,20 @@ class TarjetasSection extends Component {
 		console.log(filtrado);
 	}
 
+	cambiarOrden(){
+		if(this.state.orientacion == true){
+			this.setState({
+				orientacion: false,
+				mensaje: 'invertir orientacion'
+			})
+		} else {
+			this.setState({
+				orientacion: true,
+				mensaje: 'invertir orientacion'
+			})
+		}
+	}
+
 
 
 
@@ -61,14 +77,25 @@ class TarjetasSection extends Component {
 		return(
 			<React.Fragment>
 			<Formulario filter = {(aBuscar) => this.filtrarBusqueda(aBuscar)}/>
-                        <section className="card-container">
+            
+			<button className = 'invercion' onClick = {() => this.cambiarOrden() }> {this.state.mensaje} </button>
+			{this.state.orientacion == true ?
+			<section className="card-container">
 			{/* {this.state.datos === "" ? <h1>Cargando...</h1> : 
 			this.state.datos.map((cancion, idx) => <Tarjeta key = {cancion.title + idx} info = {cancion}
 			borrarArtista={ (id)=> this.borrar(id) } />
 			)} */}
+
 			{this.state.filter === "" ? <h1>Cargando...</h1> : 
 			this.state.filter.map((cancion, idx) => <Tarjeta key = {cancion.title + idx} info = {cancion} borrarArtista={ (id)=> this.borrar(id) }/>)}
-                       </section>
+            </section>
+			:
+			<section className="card-container-invertido">
+			{this.state.filter === "" ? <h1>Cargando...</h1> : 
+			this.state.filter.map((cancion, idx) => <Tarjeta key = {cancion.title + idx} info = {cancion} borrarArtista={ (id)=> this.borrar(id) }/>)}
+            </section>
+			}
+
 		       <button type="button" className= "cargar" onClick={()=>this.incrementar()}>Cargar más tarjetas</button>
 			</React.Fragment>
 		);
