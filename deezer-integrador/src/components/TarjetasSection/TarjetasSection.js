@@ -47,8 +47,8 @@ class TarjetasSection extends Component {
 }
 
 	filtrarBusqueda(aBuscar){
-		let filtrado = this.state.datos.filter( personaje => 
-			personaje.title.toLowerCase().includes(aBuscar.toLowerCase())
+		let filtrado = this.state.datos.filter( cancion => 
+			cancion.title.toLowerCase().includes(aBuscar.toLowerCase())
 		)
 		this.setState({
 			filter: filtrado
