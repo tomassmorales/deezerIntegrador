@@ -15,13 +15,25 @@
 	padding: 20px;
 
 }
-
 .card-container-invertido article {
 	display: flex;
-	width: 100%;
-	justify-content: space-between;
 	flex-direction: row;
+	flex-wrap: wrap;
+	min-width: 100%;
+	align-items: center;
+	justify-content: space-between;
+	padding: 20px;
+
 }
+.card-container-invertido main  {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	flex-direction: row;
+	gap: 20px;
+	align-items: center;
+}
+
 
 .cargar{
 	width: 100%;
