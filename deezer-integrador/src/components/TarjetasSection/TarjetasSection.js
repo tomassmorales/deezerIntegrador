@@ -17,23 +17,31 @@ class TarjetasSection extends Component {
 		}
 	}
 	componentDidMount(){
-		fetch("https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks&top?limit=10")
+		fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks&top?${this.state.limit}`) 
 		.then(response => response.json())
 		.then(data => this.setState(
 			{
 			datos: data.data,
 			filter: data.data, 
+			limit: this.state.limit+10
+			
 			
 			}
 		))
 		.catch(error => console.log(error))
 	} 
 
-	incrementar(){
+	agregarTarjetas(){
+		fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks&top?${this.state.limit}`)
+		.then((response)=> response.json())
+		.then((data)=> {
+			console.log(data); 
+			this.setState({
+				limit: this.state.limit+10
+			})
+		})
+		.catch(error => console.log(error))
 		
-		this.setState( //recibe un objeto literal que quiero modificar
-			{ limit: this.state.limit + 10 }
-		)
 	};
 
 	borrar(id){ 
@@ -96,7 +104,7 @@ class TarjetasSection extends Component {
             </section>
 			}
 
-		       <button type="button" className= "cargar" onClick={()=>this.incrementar()}>Cargar más tarjetas</button>
+		       <button type="button" className= "cargar" onClick={()=>this.agregarTarjetas()}>Cargar más tarjetas</button>
 			</React.Fragment>
 		);
 	}
