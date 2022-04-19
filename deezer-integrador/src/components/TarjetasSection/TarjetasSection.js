@@ -23,7 +23,7 @@ class TarjetasSection extends Component {
 			{
 			datos: data.data,
 			filter: data.data, 
-			limit: this.state.limit+10
+			limit: this.state.limit + 10
 			}
 		))
 		.catch(error => console.log(error))
@@ -35,7 +35,9 @@ class TarjetasSection extends Component {
 		.then((data)=> {
 			console.log(data); 
 			this.setState({
-				limit: this.state.limit+10
+				limit: this.state.limit+10,
+				datos: data.data,
+				filter: data.data
 			})
 		})
 		.catch(error => console.log(error))
