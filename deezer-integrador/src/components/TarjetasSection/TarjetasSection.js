@@ -17,22 +17,20 @@ class TarjetasSection extends Component {
 		}
 	}
 	componentDidMount(){
-		fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks&top?${this.state.limit}`) 
+		fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks&top?limit=` + this.state.limit) 
 		.then(response => response.json())
 		.then(data => this.setState(
 			{
 			datos: data.data,
 			filter: data.data, 
 			limit: this.state.limit+10
-			
-			
 			}
 		))
 		.catch(error => console.log(error))
 	} 
 
 	agregarTarjetas(){
-		fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks&top?${this.state.limit}`)
+		fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks&top?limit=` + this.state.limit)
 		.then((response)=> response.json())
 		.then((data)=> {
 			console.log(data); 
