@@ -44,7 +44,8 @@ class Tarjeta extends Component {
                                 {this.state.viewMore == false ? <h1> </h1> :
                                 <div>
                                 <h5>Album: {this.state.datos.album.title}</h5> 
-                                <p>Rank: {this.state.datos.rank} </p> 
+                                <p>Rank: {this.state.datos.rank} </p>
+                                <p>Duración (en segundos): {this.state.datos.duration}</p>
                                 </div>
                                 }
 
