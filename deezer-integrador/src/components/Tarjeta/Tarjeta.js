@@ -14,15 +14,15 @@ class Tarjeta extends Component {
 		}
 	} 
         viewMore(){
-                if(this.state.viewMore == true ){
+                if(this.state.viewMore == false ){
                     this.setState({
-                        viewMore: false,
-                        text: "Ver mas"
+                        viewMore: true,
+                        text: "Ver menos"
                     })
                 } else {
                     this.setState({
-                        viewMore: true,
-                        text: 'Ver menos'
+                        viewMore: false,
+                        text: 'Ver mas'
                     })            
                 }
             }
@@ -44,36 +44,14 @@ class Tarjeta extends Component {
                                 {this.state.viewMore == false ? <h1> </h1> :
                                 <div>
                                 <h5>Album: {this.state.datos.album.title}</h5> 
-                                <p>Rank: {this.state.datos.rank} </p>
-                                <p>Duración (en segundos): {this.state.datos.duration}</p>
+                                <p>Titulo corto: {this.state.datos.title_short} </p>
+                                <p>Posición actual: {this.state.datos.position}</p>
                                 </div>
                                 }
 
                         </main>
                 </article>
-                // :
-                // <article className= "tarjeta-invertida">
-                //         <main>
-                //         <div className= "boton-eliminar">
-                //                 <button onClick={()=> this.props.borrarArtista(this.props.info.id)}>X</button>
-                //         </div>
-                //         <img src={this.state.datos.album.cover_medium} alt="Imagen"/>
-                //         <h3>{this.state.datos.title}</h3>
-                //         <p className="description">Artista: {this.state.datos.artist.name} - Duracion: {this.state.datos.duration} - Ranking: {this.state.datos.rank}</p>
-
-                //         { <button className='more' onClick={()=>this.viewMore()}> {this.state.text} </button>
-                //                 {this.state.viewMore == false ? <h1> </h1> :
-                //                 <div>
-                //                 <h5>Album: {this.state.datos.album.title}</h5> 
-                //                 <p>Rank: {this.state.datos.rank} </p> 
-                //                 </div>
-                //                 }
-
-                //         </main> }
-                // </article>
                 
-
-                //}
 		);
 	}
 }
