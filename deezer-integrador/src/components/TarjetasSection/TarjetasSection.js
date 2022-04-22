@@ -13,7 +13,7 @@ class TarjetasSection extends Component {
 			limit: 10,
 			orientacion: false,
 			mensaje: 'invertir orientacion'
-			
+
 		}
 	}
 	componentDidMount(){
@@ -23,7 +23,7 @@ class TarjetasSection extends Component {
 			{
 			datos: data.data,
 			filter: data.data, 
-			limit: this.state.limit + 10
+			limit: this.state.limit 
 			}
 		))
 		.catch(error => console.log(error))
@@ -35,9 +35,9 @@ class TarjetasSection extends Component {
 		.then((data)=> {
 			console.log(data); 
 			this.setState({
-				limit: this.state.limit+10,
 				datos: data.data,
-				filter: data.data
+				filter: data.data,
+				limit: this.state.limit+10,
 			})
 		})
 		.catch(error => console.log(error))
@@ -77,9 +77,6 @@ class TarjetasSection extends Component {
 			})
 		}
 	}
-
-
-
 
 	render(){
 		return(
