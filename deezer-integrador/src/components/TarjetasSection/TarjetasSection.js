@@ -65,14 +65,14 @@ class TarjetasSection extends Component {
 	}
 
 	cambiarOrden(){
-		if(this.state.orientacion == true){
+		if(this.state.orientacion == false){
 			this.setState({
-				orientacion: false,
+				orientacion: true,
 				mensaje: 'invertir orientacion'
 			})
 		} else {
 			this.setState({
-				orientacion: true,
+				orientacion: false,
 				mensaje: 'invertir orientacion'
 			})
 		}

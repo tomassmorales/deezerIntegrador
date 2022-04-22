@@ -14,9 +14,9 @@ class Formulario extends Component {
 		event.preventDefault();
 	}
 
-	obtenerDatos(datos){
+	obtenerDatos(event){
 		this.setState({
-			value: datos.target.value
+			value: event.target.value
 		},
 		()=> this.props.filter(this.state.value)
 		)
@@ -25,7 +25,7 @@ class Formulario extends Component {
 	render(){
 		return(
 		<form onSubmit= {(event)=> this.evitarDefault(event)}>
-			<input type="text" name="search" id="" placeholder="Busca tu cancion favorita..." onChange = {(dato) => this.obtenerDatos(dato)} value={this.state.value}/>
+			<input type="text" name="search" id="" placeholder="Busca tu cancion favorita..." onChange = {(event) => this.obtenerDatos(event)} value={this.state.value}/>
 			<button type="submit"><i className="fas fa-search"></i></button>
 		</form>     
 		);
