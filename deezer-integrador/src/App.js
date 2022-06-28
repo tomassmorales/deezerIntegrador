@@ -14,6 +14,7 @@ function App() {
     </header>
     <main>
       <TarjetasSection/>
+
     </main>
       <Footer/>
     </div>

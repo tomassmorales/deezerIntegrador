@@ -82,7 +82,7 @@ class TarjetasSection extends Component {
 		return(
 			<React.Fragment>
 			<Formulario filter = {(aBuscar) => this.filtrarBusqueda(aBuscar)}/>
-            
+
 			<button className = 'invercion' onClick = {() => this.cambiarOrden() }> {this.state.mensaje} </button>
 			{this.state.orientacion == true ?
 			<section className="card-container">
